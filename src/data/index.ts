@@ -10,7 +10,7 @@ export const productList: Iproduct[] = [
     description:
       "As Luxury brands go, South Korea's Genesis is still in its infancy, having emerged as a premium automotive marque only in 2015. Despite its youth, Genesis has quickly gained recognition for its elegant design, advanced technology, and refined performance, positioning itself as a formidable contender in the luxury car market.",
     price: "50000",
-    colors: ["#FF0032", "#2563eb", "#FF6E31"],
+    colors: ["#FF6F61", "#6B5B95", "#88B04B"],
     category: {
       name: "car",
       imageURL:
@@ -25,7 +25,7 @@ export const productList: Iproduct[] = [
     description:
       "The 2023 Audi A6 Prestige embodies luxury and performance. With its sleek design and cutting-edge technology, this sedan offers an unparalleled driving experience. Experience the thrill of the road like never before with the Audi A6 Prestige.",
     price: "60000",
-    colors: ["#000000", "#FFFFFF", "#FF0000"],
+    colors: ["#F7CAC9", "#92A8D1", "#955251"],
     category: {
       name: "car",
       imageURL:
@@ -40,7 +40,7 @@ export const productList: Iproduct[] = [
     description:
       "Introducing the 2024 BMW 5 Series, a perfect blend of luxury and performance. With its sophisticated design and advanced features, this sedan redefines driving pleasure. Elevate your driving experience with the BMW 5 Series.",
     price: "55000",
-    colors: ["#0000FF", "#FFFFFF", "#00FF00"],
+    colors: ["#DD4132", "#8A6EAF", "#8AB8FF"],
     category: {
       name: "car",
       imageURL:
@@ -55,7 +55,7 @@ export const productList: Iproduct[] = [
     description:
       "Experience luxury like never before with the 2022 Mercedes-Benz E-Class. With its elegant design and advanced technology, this sedan offers a truly refined driving experience. Indulge in the luxury of Mercedes-Benz.",
     price: "65000",
-    colors: ["#000000", "#FFFFFF", "#FF0000"],
+    colors: ["#FFD662", "#89D2DC", "#5E8C31"],
     category: {
       name: "car",
       imageURL:
@@ -70,7 +70,7 @@ export const productList: Iproduct[] = [
     description:
       "Unleash the power of luxury with the 2023 Lexus LS 500. With its bold design and uncompromising performance, this sedan sets new standards for excellence. Experience luxury redefined with the Lexus LS 500.",
     price: "70000",
-    colors: ["#000000", "#FFFFFF", "#0000FF"],
+    colors: ["#F4C2C2", "#F9DC5C", "#FF6F61"],
     category: {
       name: "car",
       imageURL:
@@ -85,7 +85,7 @@ export const productList: Iproduct[] = [
     description:
       "Introducing the 2024 Porsche Panamera, the epitome of luxury and performance. With its iconic design and cutting-edge technology, this sedan offers an exhilarating driving experience. Elevate your journey with the Porsche Panamera.",
     price: "80000",
-    colors: ["#000000", "#FFFFFF", "#FF0000"],
+    colors: ["#6B5B95", "#88B04B", "#F7CAC9"],
     category: {
       name: "car",
       imageURL:
@@ -100,7 +100,7 @@ export const productList: Iproduct[] = [
     description:
       "Experience luxury in motion with the 2023 Jaguar XJ. With its sleek design and powerful performance, this sedan delivers an unforgettable driving experience. Indulge in the elegance of Jaguar.",
     price: "75000",
-    colors: ["#000000", "#FFFFFF", "#0000FF"],
+    colors: ["#92A8D1", "#955251", "#DD4132"],
     category: {
       name: "car",
       imageURL:
@@ -115,7 +115,7 @@ export const productList: Iproduct[] = [
     description:
       "Experience the future of driving with the 2022 Tesla Model S Plaid. With its futuristic design and unmatched performance, this electric sedan redefines what's possible on the road. Embrace the power of Tesla.",
     price: "90000",
-    colors: ["#000000", "#FFFFFF", "#00FF00"],
+    colors: ["#8A6EAF", "#8AB8FF", "#FFD662"],
     category: {
       name: "car",
       imageURL:
@@ -130,7 +130,7 @@ export const productList: Iproduct[] = [
     description:
       "Unleash the power of luxury with the 2023 Cadillac CT6. With its bold design and refined performance, this sedan offers a truly elevated driving experience. Experience luxury like never before with Cadillac.",
     price: "70000",
-    colors: ["#000000", "#FFFFFF", "#FF0000"],
+    colors: ["#89D2DC", "#5E8C31", "#F4C2C2"],
     category: {
       name: "car",
       imageURL:
@@ -145,7 +145,7 @@ export const productList: Iproduct[] = [
     description:
       "Indulge in luxury with the 2024 Lincoln Continental. With its elegant design and advanced features, this sedan offers a refined driving experience. Elevate your journey with Lincoln.",
     price: "65000",
-    colors: ["#000000", "#FFFFFF", "#0000FF"],
+    colors: ["#F9DC5C", "#FF6F61", "#6B5B95"],
     category: {
       name: "car",
       imageURL:
@@ -179,4 +179,21 @@ export const formInputList: IformProduct[] = [
     label: "product price",
     type: "text",
   },
+];
+
+export const colors: string[] = [
+  "#FF6F61",
+  "#6B5B95",
+  "#88B04B",
+  "#F7CAC9",
+  "#92A8D1",
+  "#955251",
+  "#DD4132",
+  "#8A6EAF",
+  "#8AB8FF",
+  "#FFD662",
+  "#89D2DC",
+  "#5E8C31",
+  "#F4C2C2",
+  "#F9DC5C",
 ];

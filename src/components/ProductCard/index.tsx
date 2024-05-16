@@ -2,22 +2,24 @@ import Img from "../Img";
 import Button from "../ui/Button";
 import { Iproduct } from "../interfaces";
 import { textSlicer } from "../../utils/function";
+import CircleColor from "../ui/CircleColor";
 interface Iprops {
   product: Iproduct;
 }
 
 const index = ({ product }: Iprops) => {
-  const { imageURL, title, description, price } = product;
+  const { imageURL, title, description, price, colors } = product;
+
+  const colorListView = colors.map((color) => ( 
+    <CircleColor color={color} key={color} />
+  ));
+
   return (
     <div className="max-w-sm mx-auto md:mx-0 md:max-w-lg border border-zinc-300 rounded p-2 flex flex-col">
       <Img imageUrl={imageURL} alt={title} className="rounded-md mb-2" />
       <h3>{title}</h3>
       <p>{textSlicer(description)}</p>
-      <div className="flex items-center my-4 space-x-2 cursor-pointer">
-        <span className="w-5 h-5 rounded-full bg-red-500" />
-        <span className="w-5 h-5 rounded-full bg-blue-500" />
-        <span className="w-5 h-5 rounded-full bg-yellow-500" />
-      </div>
+      <div className="flex items-center space-x-2">{colorListView}</div>
       <div className="flex items-center justify-between">
         <span>${price}</span>
         <Img
@@ -33,7 +35,7 @@ const index = ({ product }: Iprops) => {
           }}
           className="bg-indigo-700"
         >
-          Submit
+          Delete
         </Button>
         <Button className="bg-red-700">Edit</Button>
       </div>

@@ -6,7 +6,6 @@
     TransitionChild,
   } from "@headlessui/react";
   import { ReactNode } from "react";
-  import Button from "../Button";
   interface Iprops {
     isOpen: boolean;
     closeModel: () => void;

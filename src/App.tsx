@@ -1,22 +1,16 @@
 import { useState } from "react";
 import ProductCard from "./components/ProductCard"; // Importing ProductCard component
 import MyModal from "./components/ui/MyModal"; // Importing MyModal component
-import { formInputList, productList } from "./data"; // Importing formInputList and productList from data file
+import { colors, formInputList, productList } from "./data"; // Importing formInputList and productList from data file
 import Button from "../src/components/ui/Button"; // Importing Button component
 import Input from "../src/components/ui/Input"; // Importing Input component
 import { Iproduct } from "./components/interfaces"; // Importing Iproduct interface
 import { productValidation } from "./components/validation";
 import ErrorMessage from "./components/ui/ErrorMessage";
+import CircleColor from "./components/ui/CircleColor";
+import { v4 as uuid } from "uuid";
 
 const App = () => {
-  // State variables
-  const [isOpen, setIsOpen] = useState(false); // State for modal visibility
-  const [errors, setErrors] = useState({
-    title: "",
-    description: "",
-    imageURL: "",
-    price: "",
-  });
   const defaultProductObject = {
     // Default product object
     title: "",
@@ -29,9 +23,18 @@ const App = () => {
       imageURL: "",
     },
   };
-
+  // State variables
+  const [isOpen, setIsOpen] = useState(false); // State for modal visibility
+  const [tempColor, setTempColor] = useState<string[]>([]);
+  //default error message
+  const [errors, setErrors] = useState({
+    title: "",
+    description: "",
+    imageURL: "",
+    price: "",
+  });
   const [product, setProduct] = useState<Iproduct>(defaultProductObject); // State for product details
-
+  const [products, setProducts] = useState<Iproduct[]>(productList);
   // Function to close modal
   const close = () => {
     setIsOpen(false);
@@ -43,7 +46,7 @@ const App = () => {
   };
 
   // Mapping product list to ProductCard components
-  const productListView = productList.map((product) => (
+  const productListView = products.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));
 
@@ -67,6 +70,23 @@ const App = () => {
       />
       <ErrorMessage message={errors[input.name]} />
     </div>
+  ));
+
+  //Mapping from color list to color components
+  const colorListView = colors.map((color) => (
+    <CircleColor
+      color={color}
+      key={color}
+      onClick={() => {
+        {
+          if (tempColor.includes(color)) {
+            setTempColor((prev) => prev.filter((c) => c !== color));
+            return;
+          }
+          setTempColor((prev) => [...prev, color]);
+        }
+      }}
+    />
   ));
 
   // Function to handle cancel action
@@ -105,7 +125,12 @@ const App = () => {
     if (!hasErrorMsg) {
       setErrors(errors);
     } else {
+      setProducts((prev) => [
+        ...prev,
+        { ...product, id: uuid(), colors: tempColor },
+      ]);
       setProduct(defaultProductObject);
+      setTempColor([]);
       close();
     }
   };
@@ -129,6 +154,18 @@ const App = () => {
         <div className="space-y-3">
           {/* Render form inputs */}
           {productFormInputView}
+          <div className="flex items-center space-x-2">{colorListView}</div>
+          <div className="flex flex-wrap items-center space-x-1 cursor-pointer">
+            {tempColor.map((color) => (
+              <span
+                key={color}
+                style={{ background: color }}
+                className="rounded-md text-white text-xs mb-1 p-1"
+              >
+                {color}
+              </span>
+            ))}
+          </div>
           {/* Form for submitting or cancelling */}
           <form
             className="flex space-x-3"
