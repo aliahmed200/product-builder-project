@@ -13,7 +13,13 @@ export interface Iproduct {
 
 export interface IformProduct {
   id: string;
-  name: "title" | "description" | "imageURL" | "price";
+  name: TproductName;
   label: string;
   type: string;
+}
+
+export interface Icategory {
+  id: string;
+  name: string;
+  imageURL: string;
 }

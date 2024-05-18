@@ -5,7 +5,7 @@
  * @param {number} [num=50] - The maximum length of the sliced text. Default is 50.
  * @returns {string} The sliced text with ellipsis if applicable.
  */
-export function textSlicer(txt: string, num: number = 50) {
+export function textSlicer(txt: string, num: number = 100) {
   if (txt.length > num) return `${txt.slice(0, num)}...`;
   else return txt;
 }

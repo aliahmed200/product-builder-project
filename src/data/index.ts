@@ -1,6 +1,6 @@
 // import { v4 as uuid } from "uuid";
 import { v4 as uuid } from "uuid";
-import { Iproduct, IformProduct } from "../components/interfaces";
+import { Iproduct, IformProduct, Icategory } from "../components/interfaces";
 export const productList: Iproduct[] = [
   {
     id: uuid(),
@@ -196,4 +196,19 @@ export const colors: string[] = [
   "#5E8C31",
   "#F4C2C2",
   "#F9DC5C",
+];
+
+export const categories: Icategory[] = [
+  {
+    id: uuid(),
+    name: "car",
+    imageURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Z9cNm0YYYbYqi006W6uuSg4pphMntdnC-AQlXjhPpg&s",
+  },
+  {
+    id: uuid(),
+    name: "Nike",
+    imageURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmUDZmMRSqGjtDi5IL1byLzALCF01-90YGXNJTNahMag&s",
+  },
 ];

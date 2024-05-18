@@ -56,5 +56,6 @@ export const productValidation = (product: {
   ) {
     errors.price = "Valid Price Is Required!";
   }
+  
   return errors;
 };
